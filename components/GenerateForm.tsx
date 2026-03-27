@@ -26,7 +26,6 @@ export default function GenerateForm() {
   })
   const [result, setResult] = useState<any>(null)
   const [loading, setLoading] = useState(false)
-  const [apiKey, setApiKey] = useState('')
 
   const handleSubmit = async () => {
     if (!form.prompt.trim()) {
@@ -59,7 +58,7 @@ export default function GenerateForm() {
       </div>
 
       {/* API KEY 設定 */}
-      <ApiKeySettings onApiKeyChange={setApiKey} />
+      <ApiKeySettings onApiKeyChange={() => {}} />
 
       {/* 表單 */}
       <div className="bg-white rounded-2xl shadow-lg p-8 space-y-6">
