@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 
 export default function ImageResult({ result }: { result: any }) {
   const url =
@@ -17,7 +18,14 @@ export default function ImageResult({ result }: { result: any }) {
   return (
     <div className="bg-white rounded-2xl shadow p-6">
       <h2 className="text-xl font-semibold mb-4">生成結果</h2>
-      <img src={url} alt="Generated" className="w-full rounded-xl" />
+      <div className="relative w-full h-96">
+        <Image
+          src={url}
+          alt="Generated"
+          fill
+          className="rounded-xl object-contain"
+        />
+      </div>
       <a
         href={url}
         target="_blank"
