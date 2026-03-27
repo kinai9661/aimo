@@ -30,8 +30,6 @@ export async function POST(req: NextRequest) {
     response_format: response_format || 'url',
   }
 
-  const startTime = Date.now()
-
   try {
     const res = await fetch('https://image.kawayi.shop/task/submit', {
       method: 'POST',
