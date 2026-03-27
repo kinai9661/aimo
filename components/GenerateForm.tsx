@@ -3,6 +3,7 @@ import { useState } from 'react'
 import CurlDisplay from './CurlDisplay'
 import ImageResult from './ImageResult'
 import ApiAnalyzer from './ApiAnalyzer'
+import ApiKeySettings from './ApiKeySettings'
 
 const MODELS = [
   'seedream_5_0_lite',
@@ -25,6 +26,7 @@ export default function GenerateForm() {
   })
   const [result, setResult] = useState<any>(null)
   const [loading, setLoading] = useState(false)
+  const [apiKey, setApiKey] = useState('')
 
   const handleSubmit = async () => {
     if (!form.prompt.trim()) {
@@ -55,6 +57,9 @@ export default function GenerateForm() {
         <h1 className="text-4xl font-bold text-gray-900">AI 圖片生成站</h1>
         <p className="text-gray-600 mt-2">使用先進 AI 模型生成高品質圖片</p>
       </div>
+
+      {/* API KEY 設定 */}
+      <ApiKeySettings onApiKeyChange={setApiKey} />
 
       {/* 表單 */}
       <div className="bg-white rounded-2xl shadow-lg p-8 space-y-6">
